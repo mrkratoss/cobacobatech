@@ -1,0 +1,12 @@
+<%- include('partials/header') %>
+<h1>Our Menu</h1>
+<div class="menu-grid">
+  <% menu.forEach(item => { %>
+    <div class="menu-card">
+      <h3><%= item.name %> <span class="price">$<%= item.price %></span></h3>
+      <p class="category"><%= item.category %></p>
+      <p><%= item.description %></p>
+    </div>
+  <% }) %>
+</div>
+<%- include('partials/footer') %>

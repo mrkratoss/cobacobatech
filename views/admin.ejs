@@ -1,0 +1,31 @@
+<%- include('partials/header') %>
+<h1>Admin Dashboard</h1>
+
+<h2>Recent Reservations</h2>
+<% if (reservations.length === 0) { %>
+  <p>No reservations placed yet.</p>
+<% } else { %>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Guests</th>
+        <th>Date & Time</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% reservations.forEach(r => { %>
+        <tr>
+          <td><%= r.id %></td>
+          <td><%= r.name %></td>
+          <td><%= r.guests %></td>
+          <td><%= r.date %> @ <%= r.time %></td>
+          <td><%= r.status %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+<% } %>
+<%- include('partials/footer') %>
